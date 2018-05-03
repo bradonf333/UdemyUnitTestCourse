@@ -11,3 +11,26 @@
 /Users/moshfeghhamedani/RiderProjects/TestNinja/TestNinja/bin/Debug/EntityFramework.xml
 /Users/moshfeghhamedani/RiderProjects/TestNinja/TestNinja/bin/Debug/EntityFramework.SqlServer.xml
 /Users/moshfeghhamedani/RiderProjects/TestNinja/TestNinja/bin/Debug/Newtonsoft.Json.xml
+C:\Users\brado\Documents\Visual Studio 2017\Projects\TestNinja\TestNinja\bin\Debug\TestNinja.dll.config
+C:\Users\brado\Documents\Visual Studio 2017\Projects\TestNinja\TestNinja\bin\Debug\TestNinja.dll
+C:\Users\brado\Documents\Visual Studio 2017\Projects\TestNinja\TestNinja\bin\Debug\TestNinja.pdb
+C:\Users\brado\Documents\Visual Studio 2017\Projects\TestNinja\TestNinja\bin\Debug\EntityFramework.dll
+C:\Users\brado\Documents\Visual Studio 2017\Projects\TestNinja\TestNinja\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\brado\Documents\Visual Studio 2017\Projects\TestNinja\TestNinja\bin\Debug\Microsoft.VisualStudio.TestTools.UITest.Extension.dll
+C:\Users\brado\Documents\Visual Studio 2017\Projects\TestNinja\TestNinja\bin\Debug\Newtonsoft.Json.dll
+C:\Users\brado\Documents\Visual Studio 2017\Projects\TestNinja\TestNinja\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\brado\Documents\Visual Studio 2017\Projects\TestNinja\TestNinja\bin\Debug\EntityFramework.xml
+C:\Users\brado\Documents\Visual Studio 2017\Projects\TestNinja\TestNinja\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\brado\Documents\Visual Studio 2017\Projects\TestNinja\TestNinja\bin\Debug\Newtonsoft.Json.xml
+C:\Users\brado\Documents\Visual Studio 2017\Projects\TestNinja\TestNinja\obj\Debug\TestNinja.csprojResolveAssemblyReference.cache
+C:\Users\brado\Documents\Visual Studio 2017\Projects\TestNinja\TestNinja\obj\Debug\TestNinja.csproj.CoreCompileInputs.cache
+C:\Users\brado\Documents\Visual Studio 2017\Projects\TestNinja\TestNinja\obj\Debug\TestNinja.csproj.CopyComplete
+C:\Users\brado\Documents\Visual Studio 2017\Projects\TestNinja\TestNinja\obj\Debug\TestNinja.dll
+C:\Users\brado\Documents\Visual Studio 2017\Projects\TestNinja\TestNinja\obj\Debug\TestNinja.pdb
+C:\Users\brado\Documents\Visual Studio 2017\Projects\TestNinja\TestNinja\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\brado\Documents\Visual Studio 2017\Projects\TestNinja\TestNinja\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\brado\Documents\Visual Studio 2017\Projects\TestNinja\TestNinja\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\brado\Documents\Visual Studio 2017\Projects\TestNinja\TestNinja\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\brado\Documents\Visual Studio 2017\Projects\TestNinja\TestNinja\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\brado\Documents\Visual Studio 2017\Projects\TestNinja\TestNinja\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\brado\Documents\Visual Studio 2017\Projects\TestNinja\TestNinja\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
