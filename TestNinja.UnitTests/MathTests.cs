@@ -17,6 +17,7 @@ namespace TestNinja.UnitTests
 
 
         [Test]
+        [Ignore("Reason why we ignored the test.")]
         public void Add_ShouldAddTwoNumbers_ShouldReturnTrue()
         {
             var result = math.Add(1, 2);
@@ -25,27 +26,14 @@ namespace TestNinja.UnitTests
         }
 
         [Test]
-        public void Max_FirstNumberIsGreater_ShouldReturnTrue()
+        [TestCase(2, 1, 2)]
+        [TestCase(1, 2, 2)]
+        [TestCase(2, 2, 2)]
+        public void Max_WhenCalled_ShouldReturnGreaterArgument(int a, int b, int expectedResult)
         {
-            var result = math.Max(3, 2);
+            var result = math.Max(a, b);
 
-            Assert.That(result, Is.EqualTo(3));
-        }
-
-        [Test]
-        public void Max_SecondNumberIsGreater_ShouldReturnTrue()
-        {
-            var result = math.Max(2, 3);
-
-            Assert.That(result, Is.EqualTo(3));
-        }
-
-        [Test]
-        public void Max_BothNumbersAreEqual_ShouldReturnTrue()
-        {
-            var result = math.Max(2, 2);
-
-            Assert.That(result, Is.EqualTo(2));
+            Assert.That(result, Is.EqualTo(expectedResult));
         }
     }
 }
