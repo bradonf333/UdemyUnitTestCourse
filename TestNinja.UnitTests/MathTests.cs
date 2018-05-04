@@ -17,7 +17,6 @@ namespace TestNinja.UnitTests
 
 
         [Test]
-        [Ignore("Reason why we ignored the test.")]
         public void Add_ShouldAddTwoNumbers_ShouldReturnTrue()
         {
             var result = math.Add(1, 2);
