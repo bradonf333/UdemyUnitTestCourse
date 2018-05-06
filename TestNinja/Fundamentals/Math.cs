@@ -17,8 +17,12 @@ namespace TestNinja.Fundamentals
         public IEnumerable<int> GetOddNumbers(int limit)
         {
             for (var i = 0; i <= limit; i++)
+            {
                 if (i % 2 != 0)
+                {
                     yield return i;
+                }
+            }
         }
     }
 }
