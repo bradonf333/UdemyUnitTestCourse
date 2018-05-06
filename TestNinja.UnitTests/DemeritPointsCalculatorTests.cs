@@ -39,19 +39,13 @@ namespace TestNinja.UnitTests
         }
 
         [Test]
-        public void CalculateDemeritPoints_SpeedEquals70_ShouldReturn1()
+        [TestCase(70, 1)]
+        [TestCase(90, 5)]
+        public void CalculateDemeritPoints_SpeedIsGreaterThanSpeedLimit_ShouldReturnDemeritPoints(int speed, int expectedResult)
         {
-            var result = sut.CalculateDemeritPoints(70);
+            var result = sut.CalculateDemeritPoints(speed);
 
-            Assert.That(result, Is.EqualTo(1));
-        }
-
-        [Test]
-        public void CalculateDemeritPoints_SpeedEquals90_ShouldReturn5()
-        {
-            var result = sut.CalculateDemeritPoints(90);
-
-            Assert.That(result, Is.EqualTo(5));
+            Assert.That(result, Is.EqualTo(expectedResult));
         }
     }
 }
