@@ -15,5 +15,16 @@ namespace TestNinja.UnitTests
 
             Assert.That(sut.LastError, Is.EqualTo("a"));
         }
+
+        [Test]
+        [TestCase(null)]
+        [TestCase("")]
+        [TestCase(" ")]
+        public void Log_NullOrWhiteSpaceErrorPassed_ShouldThrowArgumentNullException(string error)
+        {
+            var sut = new ErrorLogger();
+
+            Assert.That(() => sut.Log(error), Throws.ArgumentNullException);
+        }
     }
 }
