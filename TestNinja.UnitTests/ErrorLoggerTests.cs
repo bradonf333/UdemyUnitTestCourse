@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System;
 using TestNinja.Fundamentals;
 
 namespace TestNinja.UnitTests
@@ -6,11 +7,17 @@ namespace TestNinja.UnitTests
     [TestFixture]
     public class ErrorLoggerTests
     {
+        ErrorLogger sut;
+
+        [SetUp]
+        public void SetUp()
+        {
+            sut = new ErrorLogger();
+        }
+
         [Test]
         public void Log_ErrorPassed_ShouldChangeLastErrorProperty()
         {
-            var sut = new ErrorLogger();
-
             sut.Log("a");
 
             Assert.That(sut.LastError, Is.EqualTo("a"));
@@ -22,9 +29,18 @@ namespace TestNinja.UnitTests
         [TestCase(" ")]
         public void Log_NullOrWhiteSpaceErrorPassed_ShouldThrowArgumentNullException(string error)
         {
-            var sut = new ErrorLogger();
-
             Assert.That(() => sut.Log(error), Throws.ArgumentNullException);
+        }
+
+        [Test]
+        public void Log_ValidError_ShouldRaiseErrorLoggedEvent()
+        {
+            var result = Guid.Empty;
+            sut.ErrorLogged += (sender, args) => { result = args; };
+
+            sut.Log("a");
+
+            Assert.That(result, Is.Not.EqualTo(Guid.Empty));
         }
     }
 }
