@@ -19,6 +19,9 @@ namespace TestNinja.UnitTests
         public void CalculateDemeritPoints_SpeedLessThan0_ShouldThrowOutOfRangeException()
         {
             Assert.Throws<ArgumentOutOfRangeException>(() => sut.CalculateDemeritPoints(-2));
+
+            // Example of another way to check an ArgumentOutOfRange
+            Assert.That(() => sut.CalculateDemeritPoints(-2), Throws.Exception.TypeOf<ArgumentOutOfRangeException>());
         }
 
         [Test]
