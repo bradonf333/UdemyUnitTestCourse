@@ -65,6 +65,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FundamentalsAgain\CustomerControllerTests2.cs" />
+    <Compile Include="FundamentalsAgain\DateHelperTests2.cs" />
+    <Compile Include="FundamentalsAgain\DemeritPointsCalculatorTests2.cs" />
+    <Compile Include="FundamentalsAgain\ErrorLoggerTests2.cs" />
+    <Compile Include="FundamentalsAgain\FizzBuzzTests2.cs" />
+    <Compile Include="FundamentalsAgain\HtmlFormatterTest2.cs" />
+    <Compile Include="FundamentalsAgain\MathTests2.cs" />
     <Compile Include="Fundamentals\CustomerControllerTests.cs" />
     <Compile Include="Fundamentals\DemeritPointsCalculatorTests.cs" />
     <Compile Include="Fundamentals\ErrorLoggerTests.cs" />
