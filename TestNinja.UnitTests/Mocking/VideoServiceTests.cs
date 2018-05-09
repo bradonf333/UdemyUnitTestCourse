@@ -10,15 +10,17 @@ namespace TestNinja.UnitTests.Mocking
     public class VideoServiceTests
     {
         Mock<IFileReader> mockFileReader;
-        Mock<IVideoProcessor> mockVideoProcessor;
+        Mock<IVideoRepository> mockVideoRepo;
+        List<Video> videos;
         VideoService sut;
 
         [SetUp]
         public void SetUp()
         {
             mockFileReader = new Mock<IFileReader>();
-            mockVideoProcessor = new Mock<IVideoProcessor>();
-            sut = new VideoService(mockFileReader.Object, mockVideoProcessor.Object);
+            mockVideoRepo = new Mock<IVideoRepository>();
+            videos = new List<Video>();
+            sut = new VideoService(mockFileReader.Object, mockVideoRepo.Object);
         }
 
         [Test]
@@ -32,18 +34,37 @@ namespace TestNinja.UnitTests.Mocking
         }
 
         [Test]
-        public void GetUnprocessedVideosAsCsv_2Videos_Should2Videos()
+        public void GetUnprocessedVideosAsCsv_NoVideos_ShouldReturnNoVideoIds()
         {
-            // Need a Mock VideoContext
-            var videos = new List<Video>();
-            videos.Add(new Video { Id = 1, Title = "Avengers", IsProcessed = true });
-            videos.Add(new Video { Id = 20, Title = "Avengers 2", IsProcessed = true });
+            mockVideoRepo.Setup(mvp => mvp.GetUnprocessedVideos()).Returns(videos);
 
-            mockVideoProcessor.Setup(mvp => mvp.GetVideos()).Returns(videos);
+            var result = sut.GetUnprocessedVideosAsCsv();
+
+            Assert.That(result, Is.EqualTo(""));
+        }
+
+        [Test]
+        public void GetUnprocessedVideosAsCsv_2UnprocessedVideos_ShouldReturn2VideoIds()
+        {
+            videos.Add(new Video { Id = 1, Title = "Avengers", IsProcessed = false });
+            videos.Add(new Video { Id = 20, Title = "Avengers 2", IsProcessed = false });
+            mockVideoRepo.Setup(mvp => mvp.GetUnprocessedVideos()).Returns(videos);
 
             var result = sut.GetUnprocessedVideosAsCsv();
 
             Assert.That(result, Is.EqualTo("1,20"));
+        }
+
+        [Test]
+        public void GetUnprocessedVideosAsCsv_1Processed1UnprocessedVideos_ShouldReturn1VideoId()
+        {
+            videos.Add(new Video { Id = 1, Title = "Avengers", IsProcessed = false });
+            videos.Add(new Video { Id = 20, Title = "Avengers 2", IsProcessed = true });
+            mockVideoRepo.Setup(mvp => mvp.GetUnprocessedVideos()).Returns(videos);
+
+            var result = sut.GetUnprocessedVideosAsCsv();
+
+            Assert.That(result, Is.EqualTo("1"));
         }
     }
 }

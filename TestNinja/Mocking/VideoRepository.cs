@@ -6,19 +6,18 @@ using System.Threading.Tasks;
 
 namespace TestNinja.Mocking
 {
-    public interface IVideoProcessor
+    public interface IVideoRepository
     {
-        List<Video> GetVideos();
+        IEnumerable<Video> GetUnprocessedVideos();
     }
 
-    public class VideoProcessor : IVideoProcessor
+    public class VideoRepository : IVideoRepository
     {
-        public List<Video> GetVideos()
+        public IEnumerable<Video> GetUnprocessedVideos()
         {
-            var videos = new List<Video>();
             using (var context = new VideoContext())
             {
-                videos =
+                var videos =
                     (from video in context.Videos
                      where !video.IsProcessed
                      select video).ToList();
